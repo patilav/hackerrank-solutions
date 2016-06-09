@@ -22,12 +22,24 @@ class Person {
 }
 class Student extends Person{
 	private int[] testScores;
+   /* Constructor for Student
    
+      Input parameters: String firstName - first name of the student
+      			String lastName - last name of the student
+      			int id - student id number 
+      			int[] scores - array of student scores
+   
+   */
     public Student(String firstName, String lastName, int id, int[] scores) { 
         super(firstName,lastName,id);
         this.testScores=scores.clone();
     }
-    
+    /*
+    function name : calculate
+    calculates the avegrage score of student and returns grade of student from given set of scores
+    Input parameters: None
+    Returns: char grade based on the student's average score
+    */
     public char calculate() {
         int total = 0;
         int arrayLength = this.testScores.length;
@@ -37,7 +49,12 @@ class Student extends Person{
         float average = total/arrayLength;
         return getGrade(average);
     }
-    
+    /*
+    function name : getGrade
+    calculates the avegrage score of student and returns grade of student from given set of scores
+    Input parameters: None
+    Returns: char grade based on the student's average score
+    */
     public char getGrade(float average)  {
         char grade='T';
         if (average>=90 && average<=100){ 
